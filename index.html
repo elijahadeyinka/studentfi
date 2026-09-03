@@ -2,17 +2,208 @@
 <html>
 
 <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>StudentFi</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <h1>StudentFi</h1>
+<div class="container">
 
-    <p>Your personal financial assistant for university life.</p>
+    <div class="logo">
+        StudentFi
+    </div>
 
-    <button>Add Expense</button>
-    <script src="script.js"></script>
+    <p class="subtitle">
+        Your personal financial assistant
+    </p>
+
+    <div class="balance-card">
+
+        <div class="balance-label">
+            Total Balance
+        </div>
+
+        <div class="balance" id="balance">
+            ₦72,500
+        </div>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-title">
+                Income
+            </div>
+
+            <div class="stat-value income" id="income">
+                ₦120,000
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-title">
+                Expenses
+            </div>
+
+            <div class="stat-value expense" id="expenses">
+                ₦47,500
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <div class="section-title">
+            Recent Transactions
+        </div>
+
+        <div class="transaction">
+
+            <div>
+
+                <div class="transaction-name">
+                    🍔 Lunch
+                </div>
+
+                <div class="transaction-date">
+                    Today
+                </div>
+
+            </div>
+
+            <div class="expense">
+                -₦2,500
+            </div>
+
+        </div>
+
+        <div class="transaction">
+
+            <div>
+
+                <div class="transaction-name">
+                    🚌 Transport
+                </div>
+
+                <div class="transaction-date">
+                    Yesterday
+                </div>
+
+            </div>
+
+            <div class="expense">
+                -₦1,000
+            </div>
+
+        </div>
+
+        <div class="transaction">
+
+            <div>
+
+                <div class="transaction-name">
+                    💰 Allowance
+                </div>
+
+                <div class="transaction-date">
+                    September 1
+                </div>
+
+            </div>
+
+            <div class="income">
+                +₦50,000
+            </div>
+
+        </div>
+
+    </div>
+
+    <button
+        class="add-button"
+        onclick="showTransactionForm()">
+        + Add Transaction
+    </button>
+
+    <div
+        id="transaction-form"
+        style="display: none; margin-top: 20px;">
+
+        <div class="section">
+
+            <div class="section-title">
+                Add Transaction
+            </div>
+
+            <label>
+                Transaction Type
+            </label>
+
+            <select id="transaction-type">
+
+                <option value="expense">
+                    Expense
+                </option>
+
+                <option value="income">
+                    Income
+                </option>
+
+            </select>
+
+            <br><br>
+
+            <label>
+                Amount
+            </label>
+
+            <input
+                type="number"
+                id="transaction-amount"
+                placeholder="Enter amount">
+
+            <br><br>
+
+            <label>
+                Description
+            </label>
+
+            <input
+                type="text"
+                id="transaction-description"
+                placeholder="e.g. Lunch">
+
+            <br><br>
+
+            <button
+                class="add-button"
+                onclick="addTransaction()">
+
+                Save Transaction
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 
